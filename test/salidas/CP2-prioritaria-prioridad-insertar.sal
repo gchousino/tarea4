@@ -1,0 +1,3 @@
+principal: principal.cpp:893: void main_insertarColaPrioridad(rep_persona*&, rep_colaDePrioridadPersona*&): Assertion `cp != NULL && persona != NULL' failed.
+timeout: la orden monitorizada ha volcado un 'core'
+Aborted

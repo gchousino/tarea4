@@ -1,0 +1,3 @@
+principal: principal.cpp:1074: void main_insertarPersonaEnTabla(rep_tablaPersonas*&, rep_persona*&): Assertion `tabla != NULL' failed.
+timeout: la orden monitorizada ha volcado un 'core'
+Aborted

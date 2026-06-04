@@ -1,0 +1,3 @@
+principal: principal.cpp:912: void main_eliminarPrioritaria(rep_colaDePrioridadPersona*&): Assertion `cp != NULL' failed.
+timeout: la orden monitorizada ha volcado un 'core'
+Aborted

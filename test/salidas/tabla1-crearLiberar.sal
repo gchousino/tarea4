@@ -1,0 +1,3 @@
+principal: principal.cpp:1109: void main_liberarTTablaPersonas(rep_tablaPersonas*&): Assertion `tabla != NULL' failed.
+timeout: la orden monitorizada ha volcado un 'core'
+Aborted
