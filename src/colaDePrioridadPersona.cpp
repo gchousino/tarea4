@@ -3,7 +3,11 @@
 #include "../include/evento.h"
 
 struct rep_colaDePrioridadPersona {
-
+  TPersona* heap;
+  nat cantidad;
+  int* posicion;
+  int N;
+  bool esMinHeap;
 };
 
 TColaDePrioridadPersona crearCP(nat N) {

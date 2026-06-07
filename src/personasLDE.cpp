@@ -252,14 +252,50 @@ TPersona obtenerFinalDeTPersonasLDE(TPersonasLDE personas){
 ///////////////////////////////////////////////////////////////////////////
 
 void eliminarPersonaConNombreTPersonasLDE(TPersonasLDE &personas, const char nombre[100]){
+    struct nodo_personasLDE *actual = personas->inicio;
+    while (actual != NULL) {
+        if (strcmp(nombreTPersona(actual->persona), nombre) == 0) {
+            // Encontrado el nodo a eliminar
+            if (actual->anterior != NULL) {
+                actual->anterior->siguiente = actual->siguiente;
+            } else {
+                // Es el primer nodo
+                personas->inicio = actual->siguiente;
+            }
+            if (actual->siguiente != NULL) {
+                actual->siguiente->anterior = actual->anterior;
+            } else {
+                // Es el último nodo
+                personas->final = actual->anterior;
+            }
+            liberarNodo(actual);
+            personas->cantidad--;
+            return;
+        }
+        actual = actual->siguiente;
+    }
     
 }
 
 bool estaPersonaConNombreEnTPersonasLDE(TPersonasLDE personas, const char nombre[100]){
+    struct nodo_personasLDE *actual = personas->inicio;
+    while (actual != NULL) {
+        if (strcmp(nombreTPersona(actual->persona), nombre) == 0) {
+            return true;
+        }
+        actual = actual->siguiente;
+    }
     return false;
 }
 
 TPersona obtenerPersonaConNombreTPersonasLDE(TPersonasLDE personas, const char nombre[100]){
+    struct nodo_personasLDE *actual = personas->inicio;
+    while (actual != NULL) {
+        if (strcmp(nombreTPersona(actual->persona), nombre) == 0) {
+            return actual->persona;
+        }
+        actual = actual->siguiente;
+    }
     return NULL;
 }
 
